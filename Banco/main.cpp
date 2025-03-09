@@ -1,52 +1,21 @@
 #include<iostream>
 #include<string>
+#include "Conta.hpp"
 
 using namespace std;
 
-struct Conta 
-{
-	string numero;
-	string cpfTitular;
-	string nomeTitular;
-	float saldo;
-
-};
-
-
-void sacar(Conta& conta, float valorASacar)
-{
-	if (valorASacar < 0) {
-		cout << "Nao pode sacar valor negativo" << endl;
-		return;
-	}
-	
-	if (valorASacar > conta.saldo) {
-		cout << "Saldo insufiente" << endl;
-		return;
-	}
-	conta.saldo -= valorASacar;
-}
-
-void depositar(Conta& conta, float valorADepositar) {
-	if (valorADepositar < 0) {
-		cout << "Nao pode depositar valor negativo" << endl;
-		return;
-	}
-	
-	conta.saldo += valorADepositar;
-}
-
 int main () {
 	Conta umaConta;
-	umaConta.numero = "123456";
-	umaConta.cpfTitular = "12051081654";
-	umaConta.saldo = 100;
+	umaConta.definirNomeTitular("Thalyson");
+	umaConta.definirCpfTitular("12012012054");
+	umaConta.definirNumero("0310");
+	umaConta.depositar(1000);
+	umaConta.sacar(100);
 	
-	Conta umaOutraConta;
-	umaOutraConta.saldo = 200;
-	
-	depositar(umaOutraConta, 500);
-	
-	cout << "saldo: " << umaOutraConta.saldo << endl;
-		
+	cout  << "Nome: " << umaConta.recuperaNome() << endl
+		<< "cpf titular: " << umaConta.recuperaCpf() << endl
+		<< "Numero Titular: " << umaConta.recuperaNumero() << endl
+		<< "recupera saldo: " << umaConta.recuperaSaldo() << endl;
+
+	return 0;
 }
