@@ -4,12 +4,13 @@
 class Conta 
 {
     std::string numero;
+	std::string nomeTitular;
     std::string cpfTitular;
-    std::string nomeTitular;
-    
-	float saldo = 0;
+	float saldo;
 
 	public:
+		Conta(std::string numero, std::string nomeTitular, std::string cpfTitular); // Declaração do construtor
+
 		void sacar(float valorASacar);
 		void depositar(float valorADepositar);
 		float recuperaSaldo();

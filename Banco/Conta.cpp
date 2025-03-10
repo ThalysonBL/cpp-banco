@@ -1,6 +1,12 @@
 #include "Conta.hpp"
 #include<iostream>
 
+Conta::Conta(std::string numero, std::string nomeTitular, std::string cpfTitular)
+: numero(numero), nomeTitular(nomeTitular), cpfTitular(cpfTitular), saldo(0)
+{
+}
+
+
 void Conta::sacar(float valorASacar) {
 	if (valorASacar < 0) {
 			std::cout << "Nao pode sacar valor negativo" << std::endl;
