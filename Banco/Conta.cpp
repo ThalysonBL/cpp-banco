@@ -1,9 +1,12 @@
 #include "Conta.hpp"
 #include<iostream>
 
+int Conta::numeroDeContas = 0;
+
 Conta::Conta(std::string numero, std::string nomeTitular, std::string cpfTitular)
 : numero(numero), nomeTitular(nomeTitular), cpfTitular(cpfTitular), saldo(0) //lista de inicialização
 {
+	numeroDeContas++;
 }
 
 

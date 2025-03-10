@@ -3,9 +3,13 @@
 
 class Conta 
 {
-    std::string numero;
-	std::string nomeTitular;
-    std::string cpfTitular;
+	public:
+		static int numeroDeContas;
+	
+	private:
+		std::string numero;
+		std::string nomeTitular;
+		std::string cpfTitular;
 	float saldo;
 
 	public:
