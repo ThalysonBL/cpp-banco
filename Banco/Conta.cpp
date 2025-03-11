@@ -3,10 +3,14 @@
 
 int Conta::numeroDeContas = 0;
 
-Conta::Conta(std::string numero, std::string nomeTitular, std::string cpfTitular)
-: numero(numero), nomeTitular(nomeTitular), cpfTitular(cpfTitular), saldo(0) //lista de inicialização
+Conta::Conta(std::string numero, Titular titular)
+: numero(numero), titular(titular), saldo(0) //lista de inicialização
 {
 	numeroDeContas++;
+}
+
+Conta::~Conta() {
+	numeroDeContas--;
 }
 
 
@@ -40,22 +44,10 @@ std::string Conta::recuperaNumero() {
 	return numero;
 }
 
-std::string Conta::recuperaNome() {
-	return nomeTitular;
-}
-
-std::string Conta::recuperaCpf() {
-	return cpfTitular;
-}
-
-void Conta::definirNomeTitular(std::string nome) {
-	nomeTitular = nome;
-}
-
-void Conta::definirCpfTitular(std::string cpf) {
-	cpfTitular = cpf;
-}
-
 void Conta::definirNumero(std::string numeroTitular) {
 	numero = numeroTitular;
+}
+
+int Conta::recuperaNumeroContas() {
+	return numeroDeContas;
 }

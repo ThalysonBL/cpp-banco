@@ -14,7 +14,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Thalyson
-Date                   :=09/03/25
+Date                   :=11/03/25
 CodeLitePath           :=/home/thalyson/.codelite
 MakeDirCommand         :=mkdir -p
 LinkerName             :=g++
@@ -62,7 +62,7 @@ AS       := as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Conta.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Conta.cpp$(ObjectSuffix) $(IntermediateDirectory)/Titular.cpp$(ObjectSuffix) $(IntermediateDirectory)/Cpf.cpp$(ObjectSuffix) 
 
 
 
@@ -102,6 +102,16 @@ $(IntermediateDirectory)/Conta.cpp$(ObjectSuffix): Conta.cpp
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/thalyson/Documents/c-plus-plus/Banco/Conta.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Conta.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Conta.cpp$(PreprocessSuffix): Conta.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Conta.cpp$(PreprocessSuffix) Conta.cpp
+
+$(IntermediateDirectory)/Titular.cpp$(ObjectSuffix): Titular.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/thalyson/Documents/c-plus-plus/Banco/Titular.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Titular.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Titular.cpp$(PreprocessSuffix): Titular.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Titular.cpp$(PreprocessSuffix) Titular.cpp
+
+$(IntermediateDirectory)/Cpf.cpp$(ObjectSuffix): Cpf.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/thalyson/Documents/c-plus-plus/Banco/Cpf.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Cpf.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Cpf.cpp$(PreprocessSuffix): Cpf.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Cpf.cpp$(PreprocessSuffix) Cpf.cpp
 
 ##
 ## Clean
